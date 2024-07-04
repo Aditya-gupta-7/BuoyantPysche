@@ -1,0 +1,9 @@
+.Header{
+    padding: 3px;
+}
+.intro{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    color: rgb(81, 81, 234);
+}

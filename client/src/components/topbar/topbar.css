@@ -1,0 +1,53 @@
+.top{
+    width: 100%;
+    height: 50px;
+    background-color: #e8fbfe;
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    z-index: 999;
+}
+
+.topLeft, .topRight{
+    flex: 3;
+}
+
+.topCenter{
+    flex: 6;
+    display: flex;
+    /* justify-content: center; */
+}
+
+.instagramIcon{
+    width: 40px;
+    height: 40px;
+    margin-left: 40px;
+}
+
+.userIcon{
+    width: 20px;
+    height: 20px;
+    margin-left: 20px;
+}
+.searchIcon{
+    width: 20px;
+    height: 20px;
+    margin-left: 20px;
+}
+
+.topList{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.topListItem{
+    margin-right: 20px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #555;
+    cursor: pointer;
+}
