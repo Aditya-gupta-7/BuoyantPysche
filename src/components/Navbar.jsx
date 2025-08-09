@@ -1,68 +1,104 @@
-import React, { useEffect } from 'react'
-// import { IKImage } from 'imagekitio-react';
-import Image from './Image'
-import { Link } from 'react-router'
-import { SignedIn, SignedOut, SignInButton, UserButton, useAuth } from "@clerk/clerk-react";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { SignedIn, SignedOut, UserButton, useAuth } from "@clerk/clerk-react";
+import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import Image from "./Image";
 
 export default function Navbar() {
-    const [open, setOpen] = React.useState(false)
+  const [open, setOpen] = useState(false);
+  const { getToken } = useAuth();
 
+  useEffect(() => {
+    getToken().then((token) => console.log(token));
+  }, []);
 
-    const {getToken} = useAuth()
+  const navLinks = [
+    { name: "Home", path: "/" },
+    { name: "Articles", path: "/articles" },
+    { name: "Mindfulness", path: "/mindfulness" },
+    { name: "Self-Help", path: "/self-help" },
+    { name: "About", path: "/about" },
+    { name: "Contact", path: "/contact" },
+  ];
 
-    useEffect(() => {
-      getToken().then(token=>console.log(token))
-    }, [])
-
-    return (
-    <div className='w-full h-16 md:h-20 flex items-center justify-between'>
+  return (
+    <div
+      className="w-full h-16 md:h-20 flex items-center justify-between px-4 md:px-8 
+      bg-gradient-to-r from-[#d6f3f0]/70 via-[#e8f7f4]/70 to-[#d4f0e3]/70 
+      backdrop-blur-lg animate-gradient-x transition-all duration-1000 shadow-md rounded-full md:rounded-2xl"
+    >
       {/* Logo */}
-      <Link to='\' className='flex items-center gap-2 text-xl font-bold'>
-        <Image src='logo.png' alt='logo' w={32} h={32}/>
-        <span>adulogo</span>
+      <Link
+        to="/"
+        className="flex items-center gap-2 text-2xl font-serif font-bold text-gray-800"
+      >
+        <Image src="logo.png?v=2" alt="BuoyantPsyche logo" w={32} h={32} />
+        <span className="hover:text-[#2f7c77] transition-colors duration-300">
+          BuoyantPsyche
+        </span>
       </Link>
-      {/* mobile menu */}
-      <div className='md:hidden'>
-        {/* BUTTON */}
-        <div className='cursor-pointer text-2xl font-bold' 
-             onClick={() => setOpen(!open)}
-        >
-            {open ? "X" : "O"}
-        </div>
-        {/* link list */}
-        <div className={`w-full h-screen  flex flex-col items-center justify-center gap-8 font-medium absolute top-16  ${open ? '-right-0' : '-right-full'} transition-all duration-500`}>
-        <Link to="" className='hover:text-red-500'>Home</Link>
-        <Link to="#" className='hover:text-red-500'>Trending</Link>
-        <Link to="#" className='hover:text-red-500'>Most popular</Link>
-        <Link to="#" className='hover:text-red-500'>About</Link>
-        <Link to="/">
-        <button className='py-2 px-4 rounded-3xl bg-blue-800 text-white'>
-          Login
-        </button>
-        </Link>
-        </div>
-      </div>
-      <div className='hidden md:flex'>D</div>
 
-      {/* desktop menu */}
-      <div className='hidden md:flex items-center gap-8 xl:gap-12 font-medium'>
-        <Link to="#" className='hover:text-red-500'>Home</Link>
-        <Link to="#" className='hover:text-red-500'>Trending</Link>
-        <Link to="#" className='hover:text-red-500'>Most popular</Link>
-        <Link to="#" className='hover:text-red-500'>About</Link>
-        
+      {/* Mobile Menu Button */}
+      <div
+        className="md:hidden text-2xl text-gray-800 cursor-pointer"
+        onClick={() => setOpen(!open)}
+      >
+        {open ? <AiOutlineClose /> : <AiOutlineMenu />}
+      </div>
+
+      {/* Mobile Menu */}
+      <div
+        className={`absolute top-16 right-0 w-2/3 h-screen 
+        bg-gradient-to-b from-[#e8f7f4] via-[#d6f3f0] to-[#d4f0e3] 
+        p-6 flex flex-col gap-6 transform transition-all duration-500 ease-in-out shadow-lg  
+        ${open ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"}`}
+      >
+        {navLinks.map((link, idx) => (
+          <Link
+            key={idx}
+            to={link.path}
+            className="text-lg font-medium text-gray-700 relative group"
+            onClick={() => setOpen(false)}
+          >
+            {link.name}
+            <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-[#2f7c77] transition-all duration-300 group-hover:w-full"></span>
+          </Link>
+        ))}
         <SignedOut>
-        <Link to="/login">
-         <button className='py-2 px-4 rounded-3xl bg-blue-800 text-white'>
-            Login 
-          </button>
-        </Link>
+          <Link to="/login">
+            <button className="py-2 px-4 rounded-3xl bg-[#2f7c77] text-white hover:bg-[#256b66] transition">
+              Join Us
+            </button>
+          </Link>
         </SignedOut>
         <SignedIn>
           <UserButton />
         </SignedIn>
-        
+      </div>
+
+      {/* Desktop Menu */}
+      <div className="hidden md:flex items-center gap-8 font-medium">
+        {navLinks.map((link, idx) => (
+          <Link
+            key={idx}
+            to={link.path}
+            className="relative group hover:text-[#2f7c77] transition-colors duration-300"
+          >
+            {link.name}
+            <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#2f7c77] transition-all duration-300 group-hover:w-full"></span>
+          </Link>
+        ))}
+        <SignedOut>
+          <Link to="/login">
+            <button className="py-2 px-4 rounded-3xl bg-[#2f7c77] text-white hover:bg-[#256b66] transition">
+              Join Us
+            </button>
+          </Link>
+        </SignedOut>
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
       </div>
     </div>
-  )
+  );
 }
