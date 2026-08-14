@@ -581,9 +581,20 @@ button:focus-visible {
   color: var(--color-text-accent);
 }
 
+.hero__subheads {
+  margin-bottom: var(--space-8);
+}
+
+.hero__subheads .hero__subhead {
+  margin-bottom: var(--space-4);
+}
+
+.hero__subheads .hero__subhead:last-child {
+  margin-bottom: 0;
+}
+
 .hero__subhead {
   font-size: var(--text-body-lg);
-  margin-bottom: var(--space-8);
 }
 
 .hero__image-wrap {
