@@ -44,3 +44,4 @@ Then visit http://localhost:8080
 ## Design system
 
 All visual tokens (colors, typography, spacing, components) are defined in `styles.css` under `:root`. Refer to the project plan for the full design specification.
+
