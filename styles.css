@@ -976,6 +976,10 @@ button:focus-visible {
   color: var(--color-text-secondary);
 }
 
+.accordion__content p + p {
+  margin-top: 1em;
+}
+
 .faq-footer {
   margin-top: var(--space-10);
   text-align: center;
