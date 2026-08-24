@@ -113,11 +113,13 @@ button {
   --text-h1: clamp(1.875rem, 4vw, 2.375rem);
   --text-h2: clamp(1.5rem, 3vw, 1.875rem);
   --text-h3: clamp(1.125rem, 2.5vw, 1.3125rem);
+  --text-content-title: clamp(1.1875rem, 2.2vw, 1.35rem);
+  --text-content-title-sm: 1.125rem;
   --text-body-lg: 1.125rem;
-  --text-body: 1rem;
-  --text-body-sm: 0.9375rem;
+  --text-body: 1.125rem;
+  --text-body-sm: 1rem;
   --text-label: 0.875rem;
-  --text-caption: 0.8125rem;
+  --text-caption: 0.875rem;
   --text-overline: 0.75rem;
 
   /* Spacing */
@@ -163,7 +165,7 @@ button {
 /* --- Base --- */
 body {
   font-family: var(--font-body);
-  font-size: var(--text-body);
+  font-size: clamp(1rem, 0.2vw + 0.95rem, var(--text-body));
   color: var(--color-text-body);
   background-color: var(--color-bg);
   position: relative;
@@ -184,34 +186,39 @@ body.has-mobile-book-bar {
   }
 }
 
-h1,
-h2,
-h3,
-h4 {
+/* Major display headings — role-based, not tag-based */
+.hero__headline,
+.section__title,
+.cta-band__title {
   font-family: var(--font-heading);
   font-weight: 400;
   line-height: 1.2;
   color: var(--color-text);
 }
 
-h1 {
-  font-size: var(--text-h1);
+.logo__name,
+.footer-personal__name {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  color: var(--color-text);
 }
 
-h2 {
-  font-size: var(--text-h2);
-}
-
-h3 {
-  font-family: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
-  font-size: var(--text-h3);
-  font-weight: 600;
+/* Content titles — Times New Roman with size/weight hierarchy */
+.service-card__title,
+.credential-card__title,
+.journey__content h3,
+.session-details__title {
+  font-family: var(--font-body);
+  font-size: var(--text-content-title);
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--color-text);
 }
 
 p {
   max-width: 65ch;
   color: var(--color-text-body);
-  line-height: 1.72;
+  line-height: 1.7;
 }
 
 p + p {
@@ -471,6 +478,7 @@ button:focus-visible {
 }
 
 .section__title {
+  font-size: var(--text-h2);
   margin-bottom: var(--space-4);
 }
 
@@ -478,7 +486,7 @@ button:focus-visible {
   font-size: var(--text-body-lg);
   max-width: 65ch;
   color: var(--color-text-body);
-  line-height: 1.72;
+  line-height: 1.7;
 }
 
 .content-panel {
@@ -506,7 +514,7 @@ button:focus-visible {
   min-height: 3rem;
   padding: 0.875rem 1.875rem;
   font-family: var(--font-body);
-  font-size: var(--text-label);
+  font-size: 1rem;
   font-weight: 600;
   border-radius: var(--radius-md);
   transition: background 220ms ease, transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease, color 220ms ease;
@@ -570,8 +578,9 @@ button:focus-visible {
   display: inline-flex;
   padding: 0.5rem 0;
   min-height: auto;
-  color: var(--color-text-muted);
-  font-weight: 500;
+  font-size: 1rem;
+  color: var(--color-text-body);
+  font-weight: 600;
 }
 
 .btn--text::after {
@@ -646,7 +655,6 @@ button:focus-visible {
   display: flex;
   flex-direction: column;
   gap: 0.125rem;
-  font-family: var(--font-heading);
   color: var(--color-text);
   line-height: 1.15;
 }
@@ -658,7 +666,7 @@ button:focus-visible {
 
 .logo__role {
   font-family: var(--font-body);
-  font-size: var(--text-caption);
+  font-size: var(--text-label);
   font-weight: 500;
   letter-spacing: 0.02em;
   color: var(--color-text-muted);
@@ -682,9 +690,10 @@ button:focus-visible {
 
 .nav-desktop__link {
   position: relative;
+  font-family: var(--font-body);
   font-size: var(--text-label);
   font-weight: 500;
-  color: var(--color-text-muted);
+  color: var(--color-text-body);
   transition: color 180ms ease;
 }
 
@@ -792,8 +801,9 @@ button:focus-visible {
   display: flex;
   align-items: center;
   min-height: 3rem;
+  font-family: var(--font-body);
   font-size: var(--text-body-lg);
-  color: var(--color-text);
+  color: var(--color-text-body);
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -870,7 +880,8 @@ button:focus-visible {
   gap: var(--space-2);
   margin-bottom: var(--space-5);
   padding: 0.4rem 0.9rem 0.4rem 0.65rem;
-  font-size: var(--text-caption);
+  font-family: var(--font-body);
+  font-size: var(--text-label);
   font-weight: 600;
   letter-spacing: 0.01em;
   color: var(--color-text-muted);
@@ -945,7 +956,7 @@ button:focus-visible {
 .hero__subhead {
   font-size: var(--text-body-lg);
   color: var(--color-text-body);
-  line-height: 1.72;
+  line-height: 1.7;
 }
 
 .hero__image-wrap {
@@ -1038,7 +1049,7 @@ button:focus-visible {
   padding-bottom: var(--space-6);
   font-size: var(--text-body-lg);
   color: var(--color-text-body);
-  line-height: 1.65;
+  line-height: 1.6;
 }
 
 .recognition-list__item::before {
@@ -1055,11 +1066,12 @@ button:focus-visible {
 .recognition-list__closing {
   margin-top: var(--space-8);
   font-size: var(--text-body-lg);
-  color: var(--color-text);
+  color: var(--color-text-body);
   text-align: center;
   max-width: 32em;
   margin-left: auto;
   margin-right: auto;
+  line-height: 1.7;
 }
 
 /* --- About --- */
@@ -1090,7 +1102,8 @@ button:focus-visible {
 .about__content p {
   max-width: 65ch;
   text-align: left;
-  line-height: 1.75;
+  font-size: var(--text-body-lg);
+  line-height: 1.7;
 }
 
 .about__quote {
@@ -1197,17 +1210,13 @@ button:focus-visible {
 }
 
 .credential-card__title {
-  font-family: var(--font-body);
-  font-size: var(--text-label);
-  font-weight: 600;
-  color: var(--color-text);
   margin-bottom: var(--space-2);
 }
 
 .credential-card__detail {
   font-size: var(--text-body-sm);
   color: var(--color-text-body);
-  line-height: 1.72;
+  line-height: 1.7;
 }
 
 /* --- Service cards --- */
@@ -1304,11 +1313,7 @@ button:focus-visible {
 }
 
 .service-card__title {
-  font-family: var(--font-heading);
-  font-size: var(--text-h3);
-  font-weight: 400;
   margin-bottom: var(--space-3);
-  color: var(--color-text);
   position: relative;
   z-index: 1;
 }
@@ -1316,7 +1321,7 @@ button:focus-visible {
 .service-card__text {
   font-size: var(--text-body-sm);
   color: var(--color-text-body);
-  line-height: 1.72;
+  line-height: 1.7;
   position: relative;
   z-index: 1;
 }
@@ -1355,8 +1360,6 @@ button:focus-visible {
 }
 
 .session-details__title {
-  font-family: var(--font-heading);
-  font-weight: 400;
   margin-bottom: var(--space-4);
 }
 
@@ -1367,12 +1370,13 @@ button:focus-visible {
 
 .session-details__item {
   font-size: var(--text-body-sm);
-  color: var(--color-text-muted);
+  color: var(--color-text-body);
+  line-height: 1.7;
 }
 
 .session-details__item strong {
   color: var(--color-text);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 /* --- Journey timeline --- */
@@ -1440,7 +1444,7 @@ button:focus-visible {
 .journey__content p {
   font-size: var(--text-body-sm);
   color: var(--color-text-body);
-  line-height: 1.72;
+  line-height: 1.7;
 }
 
 /* --- FAQ --- */
@@ -1450,7 +1454,8 @@ button:focus-visible {
   gap: var(--space-2);
   margin-bottom: var(--space-5);
   padding: 0.4rem 0.875rem 0.4rem 0.65rem;
-  font-size: var(--text-caption);
+  font-family: var(--font-body);
+  font-size: var(--text-label);
   font-weight: 600;
   color: var(--color-text-muted);
   background: var(--glass-bg);
@@ -1512,9 +1517,9 @@ button:focus-visible {
   padding: 1.375rem 1.5rem;
   text-align: left;
   font-family: var(--font-body);
-  font-size: var(--text-body);
-  font-weight: 600;
-  line-height: 1.45;
+  font-size: var(--text-content-title-sm);
+  font-weight: 700;
+  line-height: 1.35;
   color: var(--color-text);
   background: transparent;
   transition: color 220ms ease;
@@ -1558,7 +1563,7 @@ button:focus-visible {
   padding: 0 1.5rem 1.375rem;
   font-size: var(--text-body-sm);
   color: var(--color-text-body);
-  line-height: 1.72;
+  line-height: 1.7;
 }
 
 .accordion__content p + p {
@@ -1593,9 +1598,9 @@ button:focus-visible {
 }
 
 .faq-contact__label {
-  font-size: var(--text-caption);
-  font-weight: 600;
-  color: var(--color-text-muted);
+  font-size: var(--text-label);
+  font-weight: 700;
+  color: var(--color-text-body);
   margin-bottom: var(--space-1);
 }
 
@@ -1641,7 +1646,7 @@ button:focus-visible {
   max-width: 65ch;
   font-size: var(--text-body-lg);
   color: var(--color-text-body);
-  line-height: 1.72;
+  line-height: 1.7;
 }
 
 .cta-band .btn--primary {
@@ -1678,9 +1683,7 @@ button:focus-visible {
 }
 
 .footer-personal__name {
-  font-family: var(--font-heading);
   font-size: var(--text-body-lg);
-  color: var(--color-text);
   margin-bottom: var(--space-1);
 }
 
@@ -1716,14 +1719,14 @@ button:focus-visible {
 
 .footer__tagline {
   margin-top: var(--space-2);
-  font-size: var(--text-caption);
+  font-size: var(--text-label);
   color: var(--color-text-muted);
 }
 
 .footer__heading {
   font-family: var(--font-body);
   font-size: var(--text-label);
-  font-weight: 600;
+  font-weight: 700;
   color: var(--color-text);
   margin-bottom: var(--space-3);
 }
@@ -1731,8 +1734,8 @@ button:focus-visible {
 .footer__link,
 .footer__text {
   display: block;
-  font-size: var(--text-caption);
-  color: var(--color-text-muted);
+  font-size: var(--text-label);
+  color: var(--color-text-body);
   margin-bottom: var(--space-2);
 }
 
@@ -1765,7 +1768,7 @@ button:focus-visible {
 .footer__bottom {
   padding-top: var(--space-6);
   border-top: 1px solid var(--color-border);
-  font-size: var(--text-caption);
+  font-size: var(--text-label);
   color: var(--color-text-muted);
 }
 
@@ -1817,6 +1820,34 @@ button:focus-visible {
 .reveal-stagger.is-visible > * {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* --- Print --- */
+@media print {
+  .reveal-on-scroll,
+  .reveal-stagger > *,
+  .reveal-stagger.is-visible > *,
+  .hero__content--reveal,
+  .hero__image-wrap--reveal {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .journey__step:not(:last-child)::after {
+    transform: scaleY(1) !important;
+  }
+
+  .accordion__panel {
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  .accordion__panel[hidden] {
+    max-height: none !important;
+  }
 }
 
 /* --- Reduced motion --- */
