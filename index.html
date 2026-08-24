@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Buoyant Psyche offers warm, individual online therapy for young adults and professionals. Book a session with Shruti, a licensed psychologist.">
-  <meta name="theme-color" content="#6B8F71">
+  <meta name="theme-color" content="#B96F5D">
   <link rel="canonical" href="https://buoyantpsyche.com/">
 
   <!-- Open Graph -->
@@ -27,7 +27,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
 
@@ -56,6 +56,13 @@
 </head>
 <body class="has-mobile-book-bar">
 
+  <div class="ambient-glows" aria-hidden="true">
+    <span class="ambient-glow ambient-glow--hero"></span>
+    <span class="ambient-glow ambient-glow--mid"></span>
+    <span class="ambient-glow ambient-glow--lower"></span>
+    <span class="ambient-glow ambient-glow--cta"></span>
+  </div>
+
   <a href="#main" class="skip-link">Skip to main content</a>
 
   <!-- Header -->
@@ -67,7 +74,7 @@
         <a href="#about" class="nav-desktop__link">About</a>
         <a href="#services" class="nav-desktop__link">Services</a>
         <a href="#faq" class="nav-desktop__link">FAQ</a>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc-placeholder/viewform" class="btn btn--primary" target="_blank" rel="noopener noreferrer">Book a Session</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc224x70UjMWpSVSa9gmz8Qpi9Z4x5hly7Y9oC20_evK_-gqg/viewform" class="btn btn--primary btn--magnetic" target="_blank" rel="noopener noreferrer">Book a Session</a>
       </nav>
 
       <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
@@ -88,7 +95,7 @@
       <a href="#about" class="nav-mobile__link">About</a>
       <a href="#services" class="nav-mobile__link">Services</a>
       <a href="#faq" class="nav-mobile__link">FAQ</a>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSc-placeholder/viewform" class="btn btn--primary btn--full nav-mobile__book" target="_blank" rel="noopener noreferrer">Book a Session</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSc224x70UjMWpSVSa9gmz8Qpi9Z4x5hly7Y9oC20_evK_-gqg/viewform" class="btn btn--primary btn--magnetic btn--full nav-mobile__book" target="_blank" rel="noopener noreferrer">Book a Session</a>
     </nav>
   </div>
 
@@ -97,41 +104,48 @@
     <!-- Hero -->
     <section class="hero" id="hero" aria-labelledby="hero-heading">
       <div class="container">
-        <div class="hero__grid">
+        <div class="hero__grid reveal-stagger">
           <div class="hero__content">
+            <p class="hero__chip">
+              <span class="hero__chip-dot" aria-hidden="true"></span>
+              Online therapy for young adults
+            </p>
             <h1 class="hero__headline" id="hero-heading">Therapy that meets you <em>where you are</em></h1>
             <div class="hero__subheads">
               <p class="hero__subhead">Individual online therapy for young adults and professionals.</p>
               <p class="hero__subhead">Reaching out is often the hardest part and this is a space to do it at your own pace, from wherever you are.</p>
             </div>
             <div class="btn-group">
-              <a href="https://docs.google.com/forms/d/e/1FAIpQLSc-placeholder/viewform" class="btn btn--primary btn--full btn--full-mobile" target="_blank" rel="noopener noreferrer">Book a Session</a>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSc224x70UjMWpSVSa9gmz8Qpi9Z4x5hly7Y9oC20_evK_-gqg/viewform" class="btn btn--primary btn--magnetic btn--full btn--full-mobile" target="_blank" rel="noopener noreferrer">Book a Session</a>
               <a href="#about" class="btn btn--text">Learn about me</a>
             </div>
           </div>
-          <div class="hero__image-wrap">
-            <img
-              src="assets/images/shruti-headshot.jpeg"
-              alt="Shruti smiling warmly in a light embroidered outfit, standing outdoors in natural daylight"
-              class="hero__image"
-              width="400"
-              height="500"
-              loading="eager"
-            >
+          <div class="hero__image-wrap pointer-glow-zone" data-tilt>
+            <div class="hero__image-frame">
+              <img
+                src="assets/images/shruti-headshot.jpeg"
+                alt="Shruti smiling warmly in a light embroidered outfit, standing outdoors in natural daylight"
+                class="hero__image hero__image--tilt"
+                width="400"
+                height="500"
+                loading="eager"
+              >
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Does This Sound Familiar? -->
-    <section class="section section--subtle" id="recognize" aria-labelledby="recognize-heading">
+    <section class="section section--blush" id="recognize" aria-labelledby="recognize-heading">
       <div class="container container--narrow">
         <header class="section__header">
-          <span class="section__overline">A gentle check-in</span>
+          <span class="section__overline section__overline--animated">A gentle check-in</span>
           <h2 class="section__title" id="recognize-heading">What's been on your mind lately?</h2>
           <p class="section__intro">You don't always need the right words for it. If something has been feeling heavy or hard to carry lately, that's something a psychologist can help you work through.</p>
         </header>
-        <ul class="recognition-list">
+        <div class="content-panel">
+        <ul class="recognition-list reveal-stagger">
           <li class="recognition-list__item">Your mind won't switch off, even when you're exhausted</li>
           <li class="recognition-list__item">Small things feel overwhelming lately</li>
           <li class="recognition-list__item">You're managing fine on the outside, but feeling low on the inside</li>
@@ -139,10 +153,11 @@
           <li class="recognition-list__item">Academic or work pressure feels heavier than usual</li>
           <li class="recognition-list__item">Stress has quietly become part of everyday life</li>
         </ul>
-        <p class="recognition-list__closing">If even one of these feels familiar, it might be time to talk to a therapist and I'd be glad to be that person.</p>
+        <p class="recognition-list__closing reveal-on-scroll">If even one of these feels familiar, it might be time to talk to a therapist and I'd be glad to be that person.</p>
         <p class="text-center--spaced">
           <a href="#services" class="btn btn--text">Learn how I can help</a>
         </p>
+        </div>
       </div>
     </section>
 
@@ -150,14 +165,14 @@
     <section class="section" id="about" aria-labelledby="about-heading">
       <div class="container">
         <header class="section__header">
-          <span class="section__overline">About</span>
+          <span class="section__overline section__overline--animated">About</span>
           <h2 class="section__title" id="about-heading">Hi, I'm Shruti</h2>
         </header>
-        <div class="about__grid">
+        <div class="about__grid reveal-stagger">
           <img
             src="assets/images/shruti-about.jpeg"
             alt="Shruti in a professional white coat, smiling warmly against a soft neutral background"
-            class="about__photo"
+            class="about__photo image-hover"
             width="360"
             height="432"
             loading="lazy"
@@ -183,14 +198,14 @@
     </section>
 
     <!-- Credentials & Experience -->
-    <section class="section section--subtle" id="credentials" aria-labelledby="credentials-heading">
+    <section class="section section--warm" id="credentials" aria-labelledby="credentials-heading">
       <div class="container">
         <header class="section__header">
-          <span class="section__overline">Credentials</span>
+          <span class="section__overline section__overline--animated">Credentials</span>
           <h2 class="section__title" id="credentials-heading">You're in the hands of someone who continually refines her practice</h2>
           <p class="section__intro">My work is shaped by rigorous training, reflective practice, and deep respect for your unique lived experience, and I believe that good care requires curiosity, reflection, and a willingness to keep learning.</p>
         </header>
-        <div class="credentials-grid">
+        <div class="credentials-grid reveal-stagger">
           <div class="credential-card">
             <div class="credential-card__icon" aria-hidden="true">
               <svg class="icon" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
@@ -244,11 +259,11 @@
     <section class="section" id="services" aria-labelledby="services-heading">
       <div class="container container--wide">
         <header class="section__header">
-          <span class="section__overline">Services</span>
+          <span class="section__overline section__overline--animated">Services</span>
           <h2 class="section__title" id="services-heading">How I can help</h2>
           <p class="section__intro">Therapy looks different for everyone, and these are some of the areas I work with most often, though we'll always shape our sessions around what you actually need.</p>
         </header>
-        <div class="services-grid">
+        <div class="services-grid reveal-stagger pointer-glow-zone">
           <article class="service-card">
             <div class="service-card__icon" aria-hidden="true">
               <svg class="icon" viewBox="0 0 24 24"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
@@ -327,14 +342,14 @@
     </section>
 
     <!-- What Happens Next? -->
-    <section class="section section--subtle" id="journey" aria-labelledby="journey-heading">
+    <section class="section section--blush" id="journey" aria-labelledby="journey-heading">
       <div class="container container--narrow">
         <header class="section__header">
-          <span class="section__overline">What to expect</span>
+          <span class="section__overline section__overline--animated">What to expect</span>
           <h2 class="section__title" id="journey-heading">What happens next?</h2>
           <p class="section__intro">Beginning therapy can feel daunting, but taking the first step is an act of gentle courage. Here is a transparent look at how we will begin together:</p>
         </header>
-        <ol class="journey">
+        <ol class="journey journey--animated reveal-stagger">
           <li class="journey__step">
             <span class="journey__number" aria-hidden="true">1</span>
             <div class="journey__content">
@@ -369,42 +384,46 @@
 
     <!-- FAQ -->
     <section class="section" id="faq" aria-labelledby="faq-heading">
-      <div class="container container--narrow">
-        <header class="section__header">
-          <span class="section__overline">FAQ</span>
+      <div class="container container--wide">
+        <header class="section__header reveal-on-scroll">
+          <p class="support-pill">
+            <span class="support-pill__dot" aria-hidden="true"></span>
+            Questions before starting?
+          </p>
+          <span class="section__overline section__overline--animated">FAQ</span>
           <h2 class="section__title" id="faq-heading">Common questions</h2>
           <p class="section__intro">It's okay to have questions before reaching out. Here are answers to the ones I hear most often.</p>
         </header>
 
-        <div class="accordion" role="region" aria-label="Frequently asked questions">
-          <div class="accordion__item">
+        <div class="faq-grid reveal-stagger" role="region" aria-label="Frequently asked questions">
+          <article class="faq-card accordion__item">
             <button class="accordion__trigger" type="button" aria-expanded="false" aria-controls="faq-panel-1" id="faq-trigger-1">
               How does online therapy work?
-              <svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              <svg class="accordion__icon accordion__icon--plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
             </button>
             <div class="accordion__panel" id="faq-panel-1" role="region" aria-labelledby="faq-trigger-1" hidden>
               <div class="accordion__content">
                 Sessions are 50 minutes long and conducted virtually via a private, secure Google Meet link. You will need a stable internet connection, a quiet and private space where you feel comfortable speaking openly, and earphones for better clarity.
               </div>
             </div>
-          </div>
+          </article>
 
-          <div class="accordion__item">
+          <article class="faq-card accordion__item">
             <button class="accordion__trigger" type="button" aria-expanded="false" aria-controls="faq-panel-2" id="faq-trigger-2">
               How do I book a session?
-              <svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              <svg class="accordion__icon accordion__icon--plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
             </button>
             <div class="accordion__panel" id="faq-panel-2" role="region" aria-labelledby="faq-trigger-2" hidden>
               <div class="accordion__content">
                 Start by filling out the brief registration form on this website. I will personally review your responses and email you within 24 hours with open time slots, answers to any queries you may have, and the intake/consent details to confirm your booking.
               </div>
             </div>
-          </div>
+          </article>
 
-          <div class="accordion__item">
+          <article class="faq-card accordion__item">
             <button class="accordion__trigger" type="button" aria-expanded="false" aria-controls="faq-panel-3" id="faq-trigger-3">
               Do you offer a free consultation call?
-              <svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              <svg class="accordion__icon accordion__icon--plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
             </button>
             <div class="accordion__panel" id="faq-panel-3" role="region" aria-labelledby="faq-trigger-3" hidden>
               <div class="accordion__content">
@@ -412,24 +431,24 @@
                 <p>Taking the first step toward therapy can naturally bring up questions or uncertainty, and it is very important that you feel comfortable and informed. Once you have submitted the registration form, you are warmly invited to share any doubts, questions, or apprehensions with me via email. I will be more than happy to answer them and support you as you decide on scheduling your first full session.</p>
               </div>
             </div>
-          </div>
+          </article>
 
-          <div class="accordion__item">
+          <article class="faq-card accordion__item">
             <button class="accordion__trigger" type="button" aria-expanded="false" aria-controls="faq-panel-4" id="faq-trigger-4">
               How much does therapy cost and what payment modes are accepted?
-              <svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              <svg class="accordion__icon accordion__icon--plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
             </button>
             <div class="accordion__panel" id="faq-panel-4" role="region" aria-labelledby="faq-trigger-4" hidden>
               <div class="accordion__content">
                 Each 50-minute individual session is fee-based. Payment is required in advance to confirm your scheduled slot. For clients based in India, payments are accepted via UPI, Net Banking, or standard online transfers. International clients can pay via secure digital transfer links.
               </div>
             </div>
-          </div>
+          </article>
 
-          <div class="accordion__item">
+          <article class="faq-card accordion__item">
             <button class="accordion__trigger" type="button" aria-expanded="false" aria-controls="faq-panel-5" id="faq-trigger-5">
               Is what I share in therapy confidential?
-              <svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              <svg class="accordion__icon accordion__icon--plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
             </button>
             <div class="accordion__panel" id="faq-panel-5" role="region" aria-labelledby="faq-trigger-5" hidden>
               <div class="accordion__content">
@@ -438,24 +457,24 @@
                 <p>The only other rare exceptions to confidentiality are legally mandated situations involving an immediate risk of harm to yourself or others, which are clearly and transparently outlined in the informed consent form before we begin.</p>
               </div>
             </div>
-          </div>
+          </article>
 
-          <div class="accordion__item">
+          <article class="faq-card accordion__item">
             <button class="accordion__trigger" type="button" aria-expanded="false" aria-controls="faq-panel-6" id="faq-trigger-6">
               What languages do you offer therapy in?
-              <svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              <svg class="accordion__icon accordion__icon--plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
             </button>
             <div class="accordion__panel" id="faq-panel-6" role="region" aria-labelledby="faq-trigger-6" hidden>
               <div class="accordion__content">
                 Sessions can be conducted comfortably in English, Hindi, or a mix of both (Hinglish), depending on what allows you to express your thoughts and feelings most naturally.
               </div>
             </div>
-          </div>
+          </article>
 
-          <div class="accordion__item">
+          <article class="faq-card accordion__item">
             <button class="accordion__trigger" type="button" aria-expanded="false" aria-controls="faq-panel-7" id="faq-trigger-7">
               What concerns do you work with, and what falls outside your scope?
-              <svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              <svg class="accordion__icon accordion__icon--plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
             </button>
             <div class="accordion__panel" id="faq-panel-7" role="region" aria-labelledby="faq-trigger-7" hidden>
               <div class="accordion__content">
@@ -463,58 +482,66 @@
                 <p>Because my practice operates virtually and as an individual practitioner, it is not suited for acute psychiatric emergencies, active psychosis, severe substance addiction, or conditions requiring intensive medical/psychiatric oversight. If you are unsure whether your concerns align with my practice, you are warmly welcome to share your context in the registration form, and I will let you know honestly if I can support you or help connect you with relevant resources.</p>
               </div>
             </div>
-          </div>
+          </article>
 
-          <div class="accordion__item">
+          <article class="faq-card accordion__item">
             <button class="accordion__trigger" type="button" aria-expanded="false" aria-controls="faq-panel-8" id="faq-trigger-8">
               What should I expect in our first session?
-              <svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              <svg class="accordion__icon accordion__icon--plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
             </button>
             <div class="accordion__panel" id="faq-panel-8" role="region" aria-labelledby="faq-trigger-8" hidden>
               <div class="accordion__content">
                 The first session is an intake and collaborative beginning. We will explore what brought you to therapy, discuss your personal context and goals, and establish a comfortable rhythm together. There is no expectation for you to share everything at once; we move entirely at your pace.
               </div>
             </div>
-          </div>
+          </article>
 
-          <div class="accordion__item">
+          <article class="faq-card accordion__item">
             <button class="accordion__trigger" type="button" aria-expanded="false" aria-controls="faq-panel-9" id="faq-trigger-9">
               Do you provide emergency or crisis counselling?
-              <svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              <svg class="accordion__icon accordion__icon--plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
             </button>
             <div class="accordion__panel" id="faq-panel-9" role="region" aria-labelledby="faq-trigger-9" hidden>
               <div class="accordion__content">
                 No. This is a private outpatient practice operating strictly by scheduled appointments. It is not equipped for immediate crisis intervention or telephonic emergency support. If you are experiencing acute distress or self-harm thoughts, please reach out directly to free 24/7 national helplines like Tele-MANAS (14416) or Fortis (8376804102).
               </div>
             </div>
-          </div>
+          </article>
 
-          <div class="accordion__item">
+          <article class="faq-card accordion__item">
             <button class="accordion__trigger" type="button" aria-expanded="false" aria-controls="faq-panel-10" id="faq-trigger-10">
               What is your cancellation and rescheduling policy?
-              <svg class="accordion__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              <svg class="accordion__icon accordion__icon--plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
             </button>
             <div class="accordion__panel" id="faq-panel-10" role="region" aria-labelledby="faq-trigger-10" hidden>
               <div class="accordion__content">
                 Because a specific time slot is reserved exclusively for you each week, cancellations or rescheduling requests must be made at least 24 to 48 hours in advance. Details regarding notice windows and fee policies are outlined in the informed consent document provided before your first session.
               </div>
             </div>
-          </div>
+          </article>
         </div>
 
-        <div class="faq-footer">
-          <p>Still have questions? Email me at <a href="mailto:hello@buoyantpsyche.com" class="btn btn--text">hello@buoyantpsyche.com</a></p>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSc-placeholder/viewform" class="btn btn--primary" target="_blank" rel="noopener noreferrer">Book a Session</a>
+        <div class="faq-contact reveal-on-scroll">
+          <div class="faq-contact__icon" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </div>
+          <div class="faq-contact__body">
+            <p class="faq-contact__label">Still have questions?</p>
+            <a href="mailto:hello@buoyantpsyche.com" class="faq-contact__link">
+              hello@buoyantpsyche.com
+              <svg class="faq-contact__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Final CTA -->
-    <section class="section section--cta" id="book" aria-labelledby="cta-heading">
-      <div class="container container--narrow cta-band">
+    <section class="section section--cta pointer-glow-zone" id="book" aria-labelledby="cta-heading">
+      <div class="container container--narrow cta-band reveal-on-scroll">
         <h2 class="cta-band__title" id="cta-heading">Ready to take the first steps?</h2>
         <p class="cta-band__text">A supportive space is waiting for you! So fill out the registration form whenever you are ready, and we will take the next steps together.</p>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc-placeholder/viewform" class="btn btn--primary" target="_blank" rel="noopener noreferrer">Book a Session</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc224x70UjMWpSVSa9gmz8Qpi9Z4x5hly7Y9oC20_evK_-gqg/viewform" class="btn btn--primary btn--magnetic" target="_blank" rel="noopener noreferrer">Book a Session</a>
       </div>
     </section>
 
@@ -537,7 +564,7 @@
         <div>
           <p class="footer__heading">Practice</p>
           <span class="footer__text">Shruti · RCI-Registered Psychologist</span>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSc-placeholder/viewform" class="footer__link" target="_blank" rel="noopener noreferrer">Book a Session</a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSc224x70UjMWpSVSa9gmz8Qpi9Z4x5hly7Y9oC20_evK_-gqg/viewform" class="footer__link" target="_blank" rel="noopener noreferrer">Book a Session</a>
         </div>
       </div>
       <div class="footer__bottom">
@@ -548,7 +575,7 @@
 
   <!-- Mobile sticky CTA -->
   <div class="mobile-book-bar" aria-label="Book a session">
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc-placeholder/viewform" class="btn btn--primary btn--full" target="_blank" rel="noopener noreferrer">Book a Session</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc224x70UjMWpSVSa9gmz8Qpi9Z4x5hly7Y9oC20_evK_-gqg/viewform" class="btn btn--primary btn--magnetic btn--full" target="_blank" rel="noopener noreferrer">Book a Session</a>
   </div>
 
   <script src="main.js"></script>
