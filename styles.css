@@ -1625,6 +1625,11 @@ button:focus-visible {
     grid-template-columns: repeat(3, 1fr);
     gap: var(--space-6);
   }
+
+  .footer-grid--compact {
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: start;
+  }
 }
 
 .footer__tagline {
