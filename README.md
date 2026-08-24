@@ -1,4 +1,4 @@
-# Buoyant Psyche
+# Shruti Shukla — Counselling Psychologist Website
 
 A calm, conversion-focused single-page website for a psychology private practice. Hosted on GitHub Pages.
 
@@ -38,7 +38,7 @@ Then visit http://localhost:8080
 
 1. Push this repo to GitHub
 2. Settings → Pages → Source: `main` branch, `/ (root)`
-3. Optional: add `CNAME` file for custom domain (e.g. `buoyantpsyche.com`)
+3. Optional: add `CNAME` file for a custom domain when purchased
 4. Enable "Enforce HTTPS"
 
 ## Design system

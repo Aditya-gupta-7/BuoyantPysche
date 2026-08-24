@@ -1,4 +1,4 @@
-/* Buoyant Psyche — Warm Terracotta Design System */
+/* Shruti Shukla — Warm Terracotta Design System */
 
 /* --- Reset --- */
 *,
@@ -20,7 +20,7 @@ html {
 
 body {
   min-height: 100vh;
-  line-height: 1.65;
+  line-height: 1.7;
 }
 
 img,
@@ -64,12 +64,13 @@ button {
   --color-secondary: #C8A3A8;
   --color-highlight: #F3DDD2;
   --color-text: #342B30;
-  --color-text-muted: #665D5A;
+  --color-text-body: #51494B;
+  --color-text-muted: #756B6D;
   --color-border: #E7D9D2;
 
   /* Semantic aliases */
   --color-text-primary: var(--color-text);
-  --color-text-secondary: var(--color-text-muted);
+  --color-text-secondary: var(--color-text-body);
   --color-text-inverse: var(--color-bg);
   --color-text-accent: var(--color-primary);
   --color-accent: var(--color-primary);
@@ -163,7 +164,7 @@ button {
 body {
   font-family: var(--font-body);
   font-size: var(--text-body);
-  color: var(--color-text);
+  color: var(--color-text-body);
   background-color: var(--color-bg);
   position: relative;
   isolation: isolate;
@@ -208,8 +209,9 @@ h3 {
 }
 
 p {
-  max-width: 38em;
-  color: var(--color-text-muted);
+  max-width: 65ch;
+  color: var(--color-text-body);
+  line-height: 1.72;
 }
 
 p + p {
@@ -427,6 +429,21 @@ button:focus-visible {
   margin-bottom: var(--space-12);
 }
 
+.section__header--center {
+  text-align: center;
+}
+
+.section__header--center .section__intro,
+.section__header--center .section__title,
+.section__header--center .support-pill {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section__header--center .section__overline--animated {
+  justify-content: center;
+}
+
 .section__overline {
   display: inline-flex;
   align-items: center;
@@ -459,7 +476,9 @@ button:focus-visible {
 
 .section__intro {
   font-size: var(--text-body-lg);
-  max-width: 38em;
+  max-width: 65ch;
+  color: var(--color-text-body);
+  line-height: 1.72;
 }
 
 .content-panel {
@@ -624,13 +643,28 @@ button:focus-visible {
 }
 
 .logo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
   font-family: var(--font-heading);
-  font-size: var(--text-body-lg);
-  font-weight: 400;
   color: var(--color-text);
+  line-height: 1.15;
 }
 
-.logo:hover {
+.logo__name {
+  font-size: var(--text-body-lg);
+  font-weight: 400;
+}
+
+.logo__role {
+  font-family: var(--font-body);
+  font-size: var(--text-caption);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--color-text-muted);
+}
+
+.logo:hover .logo__name {
   color: var(--color-primary);
 }
 
@@ -910,6 +944,8 @@ button:focus-visible {
 
 .hero__subhead {
   font-size: var(--text-body-lg);
+  color: var(--color-text-body);
+  line-height: 1.72;
 }
 
 .hero__image-wrap {
@@ -1001,7 +1037,8 @@ button:focus-visible {
   padding-left: var(--space-6);
   padding-bottom: var(--space-6);
   font-size: var(--text-body-lg);
-  color: var(--color-text-muted);
+  color: var(--color-text-body);
+  line-height: 1.65;
 }
 
 .recognition-list__item::before {
@@ -1051,16 +1088,17 @@ button:focus-visible {
 }
 
 .about__content p {
-  max-width: none;
-  text-align: justify;
-  text-align-last: left;
-  hyphens: auto;
+  max-width: 65ch;
+  text-align: left;
+  line-height: 1.75;
 }
 
 .about__quote {
   position: relative;
   margin-top: var(--space-10);
-  padding: var(--space-10) var(--space-8) var(--space-8) var(--space-12);
+  margin-left: auto;
+  margin-right: auto;
+  padding: var(--space-10) var(--space-8) var(--space-8);
   background: rgba(243, 221, 210, 0.52);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -1072,15 +1110,17 @@ button:focus-visible {
   font-weight: 400;
   font-style: italic;
   color: var(--color-text);
-  line-height: 1.6;
-  max-width: none;
+  line-height: 1.65;
+  max-width: 36rem;
+  text-align: center;
 }
 
 .about__quote::before {
   content: "\201C";
   position: absolute;
   top: -0.25rem;
-  left: var(--space-4);
+  left: 50%;
+  transform: translateX(-50%);
   font-family: var(--font-heading);
   font-size: clamp(3.5rem, 8vw, 5rem);
   line-height: 1;
@@ -1166,8 +1206,8 @@ button:focus-visible {
 
 .credential-card__detail {
   font-size: var(--text-body-sm);
-  color: var(--color-text-muted);
-  line-height: 1.6;
+  color: var(--color-text-body);
+  line-height: 1.72;
 }
 
 /* --- Service cards --- */
@@ -1275,8 +1315,8 @@ button:focus-visible {
 
 .service-card__text {
   font-size: var(--text-body-sm);
-  color: var(--color-text-muted);
-  line-height: 1.65;
+  color: var(--color-text-body);
+  line-height: 1.72;
   position: relative;
   z-index: 1;
 }
@@ -1399,6 +1439,8 @@ button:focus-visible {
 
 .journey__content p {
   font-size: var(--text-body-sm);
+  color: var(--color-text-body);
+  line-height: 1.72;
 }
 
 /* --- FAQ --- */
@@ -1511,8 +1553,8 @@ button:focus-visible {
 .accordion__content {
   padding: 0 1.5rem 1.375rem;
   font-size: var(--text-body-sm);
-  color: rgba(102, 93, 90, 0.92);
-  line-height: 1.7;
+  color: var(--color-text-body);
+  line-height: 1.72;
 }
 
 .accordion__content p + p {
@@ -1592,8 +1634,10 @@ button:focus-visible {
 
 .cta-band__text {
   margin: 0 auto var(--space-10);
-  max-width: 32em;
+  max-width: 65ch;
   font-size: var(--text-body-lg);
+  color: var(--color-text-body);
+  line-height: 1.72;
 }
 
 .cta-band .btn--primary {
@@ -1613,6 +1657,40 @@ button:focus-visible {
     padding-top: var(--space-16);
     padding-bottom: var(--space-16);
   }
+}
+
+.footer-personal__main {
+  display: grid;
+  gap: var(--space-8);
+  margin-bottom: var(--space-10);
+}
+
+@media (min-width: 768px) {
+  .footer-personal__main {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: var(--space-12);
+  }
+}
+
+.footer-personal__name {
+  font-family: var(--font-heading);
+  font-size: var(--text-body-lg);
+  color: var(--color-text);
+  margin-bottom: var(--space-1);
+}
+
+.footer-personal__role {
+  font-size: var(--text-label);
+  font-weight: 500;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-3);
+}
+
+.footer-personal__links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
 }
 
 .footer-grid {
@@ -1681,7 +1759,6 @@ button:focus-visible {
 }
 
 .footer__bottom {
-  margin-top: var(--space-10);
   padding-top: var(--space-6);
   border-top: 1px solid var(--color-border);
   font-size: var(--text-caption);

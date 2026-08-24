@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://buoyantpsyche.com/sitemap.xml
+Sitemap: https://aditya-gupta-7.github.io/BuoyantPysche/sitemap.xml

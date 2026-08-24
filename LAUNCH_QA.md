@@ -1,4 +1,4 @@
-# Launch QA Report — Buoyant Psyche MVP
+# Launch QA Report — Shruti Shukla Website
 
 Date: 2026-07-31
 

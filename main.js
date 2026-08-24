@@ -1,5 +1,5 @@
 /**
- * Buoyant Psyche — main.js
+ * Shruti Shukla — main.js
  * Navigation, FAQ accordion, scroll reveal, pointer effects.
  */
 
@@ -462,7 +462,7 @@
 
   initServiceCardGlow();
 
-  window.BUOYANT_PSYCHE = {
+  window.SHRUTI_SHUKLA_SITE = {
     bookingFormUrl: BOOKING_FORM_URL
   };
 })();
